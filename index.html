@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOFPFA Agriculture</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo.jpg" alt="MOFPFA Logo">
+      <span>MOFPFA</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Empowering Farmers, Sustaining Growth</h1>
+      <p>MOFPFA – Advancing sustainable agriculture for a greener future.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="about-overlay"></div>
+    <div class="about-container">
+      <div class="about-text">
+        <h2>About MOFPFA</h2>
+        <p>
+          The Maharlika Organic Farmers and Producers Federation Association (MOFPFA)
+          is dedicated to promoting organic and sustainable agricultural practices.
+          We support local farmers through training, innovation, and environmental awareness.
+        </p>
+      </div>
+      <div class="about-img">
+        <img src="about.png" alt="About MOFPFA">
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="products">
+    <h2>Our Products</h2>
+    <div class="filter-buttons">
+      <button class="active" onclick="filterProducts('all')">All</button>
+      <button onclick="filterProducts('fertilizer')">Fertilizers</button>
+      <button onclick="filterProducts('feeds')">Feeds</button>
+    </div>
+    <div class="product-container">
+      <div class="product-card fertilizer">
+        <img src="product1.png" alt="Super Organic Booster">
+        <h3>Super Organic Booster</h3>
+        <p>Pre-Probiotic Enzyme Liquid Fertilizer for enhanced plant growth</p>
+        <span class="price">₱850</span>
+      </div>
+
+      <div class="product-card feeds">
+        <img src="product2.png" alt="Super Organic Complete">
+        <h3>Super Organic Complete</h3>
+        <p>Pelletized Feeds for livestock nutrition</p>
+        <span class="price">₱750</span>
+      </div>
+
+      <div class="product-card fertilizer">
+        <img src="product3.png" alt="100% Organic Raw Powder">
+        <h3>100% Organic Raw Powder</h3>
+        <p>Natural fertilizer for all types of crops</p>
+        <span class="price">₱650</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <h2>What Our Farmers Say</h2>
+    <div class="testimonials-container">
+      <div class="testimonial-card">
+        <p>"MOFPFA fertilizers gave my crops a second life! Harvest has improved by 40%."</p>
+        <h4>- Farmer Liza</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"Super Organic Booster is a game changer. My soil is healthier than ever!"</p>
+        <h4>- Farmer Joel</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"Affordable, effective, and organic — what more could we ask for?"</p>
+        <h4>- Farmer Ana</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"I love how MOFPFA supports sustainable agriculture. Highly recommended."</p>
+        <h4>- Farmer Edgar</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"Even our livestock feeds are organic now! The difference is amazing."</p>
+        <h4>- Farmer Rose</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61563979495430" target="_blank">Visit our Facebook Page</a></p>
+      <p><strong>Email:</strong> <a href="mailto:edsorilla.maharlika@gmail.com">edsorilla.maharlika@gmail.com</a></p>
+      <p><strong>Address:</strong> Leyland St. Brixstone Ville Camarin North, Caloocan, Philippines</p>
+    </div>
+  </section>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener("scroll", () => {
+      const nav = document.querySelector(".navbar");
+      nav.classList.toggle("scrolled", window.scrollY > 50);
+    });
+
+    // Product Filter
+    function filterProducts(category) {
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
