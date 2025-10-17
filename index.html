@@ -13,13 +13,7 @@
       <img src="logo.jpg" alt="MOFPFA Logo">
       <span>MOFPFA</span>
     </div>
-
-    <!-- Hamburger Icon -->
-    <div class="menu-toggle" id="menu-toggle">
-      ☰
-    </div>
-
-    <nav id="nav-menu">
+    <nav>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -130,13 +124,6 @@
     window.addEventListener("scroll", () => {
       const nav = document.querySelector(".navbar");
       nav.classList.toggle("scrolled", window.scrollY > 50);
-    });
-
-    // Hamburger menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
     });
 
     // Product Filter
